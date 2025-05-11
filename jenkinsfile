@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     environment {
-        AWS_DEFAULT_REGION    = 'ap-south-1' // ✅ Region passed as env var
+        AWS_DEFAULT_REGION = 'ap-south-1'
     }
 
-
+    stages {
         stage('Terraform Init') {
             steps {
                 dir('terraform-ec2') {
@@ -30,5 +30,5 @@ pipeline {
             }
         }
     }
-
 }
+
