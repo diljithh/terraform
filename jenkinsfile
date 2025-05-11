@@ -5,12 +5,6 @@ pipeline {
         AWS_DEFAULT_REGION    = 'ap-south-1' // ✅ Region passed as env var
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/diljithh/terraform.git'
-            }
-        }
 
         stage('Terraform Init') {
             steps {
