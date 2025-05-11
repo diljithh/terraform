@@ -1,14 +1,14 @@
 pipeline {
     agent any
 
-    }provider "aws" {
-  region = "ap-south-1"
-}
+    environment {
+        AWS_DEFAULT_REGION    = 'ap-south-1' // ✅ Region passed as env var
+    }
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://your-repo-url.git'
+                git 'https://github.com/diljithh/terraform.git'
             }
         }
 
@@ -36,4 +36,5 @@ pipeline {
             }
         }
     }
+
 }
